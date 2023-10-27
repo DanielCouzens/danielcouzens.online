@@ -10,13 +10,12 @@
 	<script>
 		let ws;
 		try {
-					const proto = window.location.protocol = 'https:' ? 'wss' : 'ws';
-					ws = new WebSocket(`${proto}://${window.location.host}`);
-
-				} catch(e) {
-							//
-						}
-		ws.onmessage = (event) => {console.log(event.data) }
+			const proto = window.location.protocol = 'https:' ? 'wss' : 'ws';
+			ws = new WebSocket(`${proto}://${window.location.host}`);
+		} catch(e) {
+			console.log('there is an error with the websocket', e)
+		}
+		ws.onmessage = (event) => {console.log(event.data)};
 	</script>
 	<html>
 

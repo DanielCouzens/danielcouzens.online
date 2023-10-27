@@ -23,11 +23,10 @@ wss.on('connection', function connection(ws) {
 
 	wss.broadcast(`Current visitors ${numbClients}`);
 
-	if (ws.readyState === ws.Open) {
+	if (ws.readyState === ws.OPEN) { 
 		ws.send('Welcome to my server');
-
-
 	}
+
 	ws.on('close', function close() {
 		console.log('A client has disconnected');
 	});
